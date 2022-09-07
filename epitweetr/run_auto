@@ -1,32 +1,29 @@
-#define function
-run_epit <- function(dir){
-    library(epitweetr)
-    print("main_loop starts")
-    epitweetr_app(dir)
-    print("detect_loop starts")
-    detect_loop(dir)
-    print("search_loop starts")
-    search_loop(dir)
-    print("fs_loop starts")
-    fs_loop(dir)
-}
+import subprocess
+from subprocess import Popen, PIPE
+import glob
 
-#setup environment
-Sys.setenv(HTTPS_Proxy = "http://fw-bln.rki.ivbb.bund.de:8020")
-Sys.setenv(HADOOP_HOME = "S:/Forschungsdaten/Zig/ZiG1/epit_trial_final/hadoop")
-dir_epit <- c("S:/Forschungsdaten/Zig/ZiG1/epit_trial_final")
+path = "S:/Forschungsdaten/Zig/ZiG1/run_epit"
+commands = ['main_loop.R', 'detec_loop.R']
 
-#run epitweetr
-run_epit(dir_epit)
+process = [Popen()]
+'''
+commands = ['command1','command2','command3']
+procs = [Popen(i) for i in commands]
 
-#x11()
-#epitweetr_app("S:/Forschungsdaten/Zig/ZiG1/epit_trial_final")
-#tw <- create_topwords(topic = "dengue",
- #country_codes = c("EU"),
- #date_min = "2022-08-01",
- #date_max = "2022-08-15",
- #with_retweets = FALSE,
- #location_type = "tweet",
- #top = 25
- #)
-#show(tw())ma
+for p in procs:
+    p.wait()
+'''
+
+#import os
+subprocess.Popen("Rscript S:/Forschungsdaten/Zig/ZiG1/run_epit/main_loop.R", shell=True)
+subprocess.Popen("Rscript S:/Forschungsdaten/Zig/ZiG1/run_epit/detect_loop.R", shell=True)
+#subprocess.call("Rscript S:/Forschungsdaten/Zig/ZiG1/run_epit/search_loop.R", shell=True)
+#subprocess.call("Rscript S:/Forschungsdaten/Zig/ZiG1/run_epit/fs_loop.R", shell=True)
+
+#detect <-function(dir){ # does it need to be separately?
+#    epitweetr::detect_loop(dir)
+#}
+
+#search <-function(dir){
+#    epitweetr::search_loop(dir)
+#}
