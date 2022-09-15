@@ -1,3 +1,5 @@
+# defined four R sciprts which have a function of executing each loop 
+
 import subprocess
 import os
 from subprocess import Popen, PIPE
