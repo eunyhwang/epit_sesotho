@@ -2,28 +2,24 @@
 main_loop <- function(folder_dir, hadoop_dir, proxy_dir) {
     Sys.setenv(HTTPS_Proxy = proxy_dir)
     Sys.setenv(HADOOP_HOME = hadoop_dir)
-    print("The main loop starts")
     epitweetr_app(folder_dir)
 }
 
 detect_loop <-function(folder_dir, hadoop_dir, proxy_dir) {
     Sys.setenv(HTTPS_Proxy = proxy_dir)
     Sys.setenv(HADOOP_HOME = hadoop_dir)
-    print("The detect loop starts")
     epitweetr::detect_loop(folder_dir)
 }
 
 search_loop <-function(folder_dir, hadoop_dir, proxy_dir) {
     Sys.setenv(HTTPS_Proxy = proxy_dir)
     Sys.setenv(HADOOP_HOME = hadoop_dir)
-    print("The search loop starts")
     epitweetr::search_loop(folder_dir)
 }
 
 detect_loop <-function(folder_dir, hadoop_dir, proxy_dir) {
     Sys.setenv(HTTPS_Proxy = proxy_dir)
     Sys.setenv(HADOOP_HOME = hadoop_dir)
-    print("The detect loop starts")
     epitweetr::detect_loop(folder_dir)
 }
 
