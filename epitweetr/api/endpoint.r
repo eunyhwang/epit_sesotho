@@ -3,7 +3,7 @@
 #* @param num number of top words
 #* @param tpc disease topics
 function(tpc="", cntry="", num) { # the variable cntry get only one country name. it needs to be updated with a list
-    epitweetr::setup_config("S:/Forschungsdaten/Zig/ZiG1/epit_trial_final")
+    epitweetr::setup_config("my_path/epit_trial_final")
     ob <- epitweetr::create_topwords(
         topic = tpc, 
         country_codes = cntry,
@@ -22,7 +22,7 @@ function(tpc="", cntry="", num) { # the variable cntry get only one country name
 #* @param cntry country name
 #* @param tpc disease name
 function(tpc="") {
-    epitweetr::setup_config("S:/Forschungsdaten/Zig/ZiG1/epit_trial_final")
+    epitweetr::setup_config("my_path/epit_trial_final")
     topchart <- epitweetr::create_topchart(
         topic= tpc,
         serie="entities",
@@ -39,7 +39,7 @@ function(tpc="") {
 #* @get /epitweetr/create_maps
 #* @param tpc disease name
 function(tpc="") {
-    epitweetr::setup_config("S:/Forschungsdaten/Zig/ZiG1/epit_trial_final")
+    epitweetr::setup_config("my_path/epit_trial_final")
     map <- epitweetr::create_map(
         topic=tpc, 
         countries = "African Region",
@@ -54,7 +54,7 @@ function(tpc="") {
 #* @get /epitweetr/trend_line
 #* @param tpc disease name
 function(tpc="") {
-    epitweetr::setup_config("S:/Forschungsdaten/Zig/ZiG1/epit_trial_final")
+    epitweetr::setup_config("my_path/epit_trial_final")
     line <- epitweetr::trend_line(
         topic =tpc,
         countries = "African Region",
