@@ -6,7 +6,7 @@ from spacy.lang.af import Afrikaans
 
 nlp = Afrikaans()
 
-with open('/home/hwange/sesotho_corpus.txt', 'r', encoding ='UTF8') as file:
+with open('/my_path/sesotho_corpus.txt', 'r', encoding ='UTF8') as file:
     corpus = file.readlines()
     tokens_updated = []
     for sent in corpus:
@@ -27,7 +27,7 @@ with open('corpus_preprocessed.txt','w') as f_output:
 
 
 model = fasttext.train_unsupervised('corpus_preprocessed.txt', model='skipgram', epoch=25, lr=0.1, minCount=1, dim=300)
-model.save_model('/scratch/hwange/fastText/result/tokenized_skipgram_lr=0.1') #modify parameters
+model.save_model('/my_path/tokenized_skipgram_lr=0.1') #modify parameters
 print("training finished")
 
 print("neighborhood test")
