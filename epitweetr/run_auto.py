@@ -6,7 +6,7 @@ from subprocess import Popen, PIPE
 import glob
 
 ''' make the path automaitcally
-path = os.system("S:/Forschungsdaten/Zig/ZiG1/run_epit")
+path = os.system("path/run_epit")
 path = os.replace(a for a in file, location) 
 '''
 file = ['main_loop', 'detect_loop', 'search_loop', 'fs_loop']
