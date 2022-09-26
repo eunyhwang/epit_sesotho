@@ -1,5 +1,5 @@
 library(dotenv)
-setwd("S:/Forschungsdaten/Zig/ZiG1/epit_trial_final/run_epit")
+setwd("path")
 load_dot_env()
 
 proxy <- Sys.getenv("HTTPS_proxy")
