@@ -35,7 +35,7 @@ hadoop <- Sys.getenv("HTTPS_hadoop")``` in order to set the path of proxy and ha
 
 As a result of this line, you will see an address number (generally starting with https://127.) on your conda prompt. Copy and past the address on your web-browser. Then you will see a epitweetr dashboard.
 
-Epitweetr requires that you have an account in order to collect data. Please feel free to choose a Twitter account or a Twitter developer account. Once the account has been created, put the account information on the dashboard. If you need more information, please check this link.(https://cran.r-project.org/web/packages/epitweetr/vignettes/epitweetr-vignette.html)
+Epitweetr requires you to have an account in order to collect data. Please feel free to choose a Twitter account or a Twitter developer account. Once the account has been created, put the account information on the dashboard. If you need more information, please check this link.(https://cran.r-project.org/web/packages/epitweetr/vignettes/epitweetr-vignette.html)
 
 ## Build up API
 ```
