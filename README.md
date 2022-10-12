@@ -6,17 +6,20 @@ Before you run epitweetr, you need these softwares. Please be aware of that you 
 
 # Instruction
 ## Download and install Anaconda
-`wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-ppc64le.sh`
-
-`bash https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-ppc64le.sh`
+```
+wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-ppc64le.sh
+bash https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-ppc64le.sh
+```
+First, install Anaconda with theses codes.
 
 ## Create a conda environment 
-To run these codes, first modify the variables in the ```.env``` file to your own, then run them from the Anaconda prompt.
+After donwlodaing the ZIP file, unzip it and run the below codes to create an environment named ```epit```. 
 ```
 conda env create -f env.yml
 conda activate epit
 ```
 ## Envrionment variable
+From this step, go under the ```api_tosend``` folder, and modify the variables in the ```.env``` file to your own which is about the path of proxy, the path of hadoop, and the path of the epitweetr folder you want to work. Now, continue to follow the instruction by executing the line. 
 ```
 Rscript setup_epit.R 
 ```
