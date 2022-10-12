@@ -42,5 +42,5 @@ Epitweetr requires that you have an account in order to collect data. Please fee
 Rscript endpoint.R 
 Rscript run_api.R
 ```
-Following the collection of data, you can use these R scripts to build up API. In the result of ```run_api.R```, you will get a local API address. Paste it in your web-browser to view the API on Swagger. We have only 4 endpoints for basic functions of epitweetr; top_words, top_entities, create_maps, and trend_line. 
+Following the collection of data, you can use these R scripts to build up API. In the result of ```run_api.R```, you will get a local API address. Paste it in your web-browser to view the API on Swagger. At the moment, we have only 4 endpoints for basic functions of epitweetr; top_words, top_entities, create_maps, and trend_line. 
 
