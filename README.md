@@ -12,9 +12,8 @@ Before you run epitweetr, you need these softwares. Please be aware of that you 
 
 ## Create a conda environment and run scripts
 Before running the codes below, please modify the variables in the .env file to your own first and run the codes on the Anaconda prompt. As a result, you will get a local API address, copy and paste to try the API in Swagger.
-```conda create -n epit_api python=3.6
-conda activate epit_api
-pip install R
+```conda env create -f env.yml
+conda activate epit
 
 Rscript setup_epit.R #setup the epitweetr env
 python run_epit.py #launch epitweetr with 4 loops
