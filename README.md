@@ -50,5 +50,3 @@ Here is the instruction of using the API for those who are not familiar with Swa
 2. Type a name of a disease (for this, please see the ```topics.xlsx``` file which contains a list of disease names).
 3. Each endpoint will display tweets that mention the disease; top_words represents top words, top_entities represents context, create_maps displays distributions of tweets, and trend_line represents the trend in tweet numbers.
 
-At the moment, we have only 4 endpoints for basic functions of epitweetr; top_words, top_entities, create_maps, and trend_line. 
-
