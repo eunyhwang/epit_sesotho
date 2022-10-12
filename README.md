@@ -30,7 +30,7 @@ This line is to check if JAVA_HOME envrionment is setup and the R environment kn
 ```
 python run_epit.py
 ``` 
-This script launches the epitweetr Shiny app by executing four parallel loops (main_loop, detect_loop, search_loop, and fs_loop). Each loop script contains two lines ```proxy <- Sys.getenv("HTTPS_proxy")
+This script launches the epitweetr Shiny app by executing four parallel loops under ``` functions``` folder (main_loop, detect_loop, search_loop, and fs_loop). Each loop script contains two lines ```proxy <- Sys.getenv("HTTPS_proxy")
 hadoop <- Sys.getenv("HTTPS_hadoop")``` in order to set the path of proxy and hadoop. If you do not need this step, please mark the lines with a ```#```.
 
 As a result of this line, you will see an address number (generally starting with https://127.) on your conda prompt. Copy and past the address on your web-browser. Then you will see a epitweetr dashboard.
