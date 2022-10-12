@@ -45,6 +45,7 @@ Rscript run_api.R
 Following the collection of data, you can use these R scripts to build up API. In the result of ```run_api.R```, you will get a local API address. Paste it in your web-browser to view the API on Swagger. 
 
 Here is the instruction of using the API for those who are not familiar with Swagger.
+
 0. It has four endpoints at the moment: top_words, top_entities, create_maps, and trend_line. By default, the region is set as Lesotho or African Region, and the period is set from 1st to 30th of August.
 1. Choose one endpoint and click "Try it out" on the right side, a few parameters will be displayed but only "disease name" is available to be modified for now.
 2. Type a name of a disease (for this, please see the ```topics.xlsx``` file which contains a list of disease names).
