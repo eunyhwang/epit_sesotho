@@ -10,17 +10,20 @@ Before you run epitweetr, you need these softwares. Please be aware of that you 
 
 `bash https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-ppc64le.sh`
 
-## Create a conda environment and run scripts
+## Create a conda environment 
 Before running the codes below, please modify the variables in the ```.env file``` to your own first and run the codes on the Anaconda prompt. As a result, you will get a local API address, copy and paste to try the API in Swagger.
-```conda env create -f env.yml
+```
+conda env create -f env.yml
 conda activate epit
-
+```
+## run scripts
+```
 Rscript setup_epit.R #setup the epitweetr env
 python run_epit.py #launch epitweetr with 4 loops
 Rscript endpoint.R #build up API
 Rscript run_api.R
 ```
-# Code explained
+# Scripts explained
 ## setup_epit.R
 This file is written in R, which aims to setup the environment to run the epitweetr and to check if JAVA_HOME envrionment setup. If you get an error, you need to set the JAVA_HOME variable for your OS, please see your specific OS instructions.
 
