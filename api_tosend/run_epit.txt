@@ -1,0 +1,7 @@
+conda create env -f env.yml
+conda activate epit
+
+Rscript setup_epit.R #setup the epitweetr env
+python run_epit.py #launch epitweetr with 4 loops
+Rscript endpoint.R #build up API
+Rscript run_api.R
