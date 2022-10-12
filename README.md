@@ -16,11 +16,19 @@ Before running the codes below, please modify the variables in the ```.env file`
 conda env create -f env.yml
 conda activate epit
 ```
-## run scripts
+## Envrionment variable
+```Rscript setup_epit.R ```
+This line is to check whether the R environment knows the path of the Java installation home. 
+
+## Launch epitweetr with 4 loops
+```python run_epit.py``` 
+As a result of this line, you will see an address number(generally starting with https://127.X.X.X) on your conda prompt. Copy and past the address on your web-browser. Then you will see a epitweetr dashboard.
+
+In order to collect data via epitweetr, you need an account. Feel free to choose a Twitter account or a Twitter developer account. After creating an account, put the information on the dashboard. You can find the information more in detail here.
+
+## Build up API
 ```
-Rscript setup_epit.R #setup the epitweetr env
-python run_epit.py #launch epitweetr with 4 loops
-Rscript endpoint.R #build up API
+Rscript endpoint.R 
 Rscript run_api.R
 ```
 # Scripts explained
