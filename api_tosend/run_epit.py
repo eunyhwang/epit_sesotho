@@ -14,4 +14,4 @@ file = ['main_loop', 'detect_loop', 'search_loop', 'fs_loop']
 
 for a in file: 
     print(a)
-    subprocess.Popen(f'Rscript {path}/run_epit/%s.R' % a, shell=True)
+    subprocess.Popen(f'Rscript {path}/functions/%s.R' % a, shell=True)
