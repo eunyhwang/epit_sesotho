@@ -39,7 +39,6 @@ Epitweetr requires you to have an account in order to collect data. Please feel 
 
 ## Build up API
 ```
-Rscript endpoint.R 
 Rscript run_api.R
 ```
 Following the collection of data, you can use these R scripts to build up API. In the result of ```run_api.R```, you will get a local API address. Paste it in your web-browser to view the API on Swagger. 
