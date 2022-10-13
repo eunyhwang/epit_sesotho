@@ -1,10 +1,13 @@
+#library(dotenv)
+#load_dot_env()
+#data_path <- Sys.getenv("DATA_PATH")
+
 #* @post /epitweetr/top_words
 #* @serializer json list(na='string')
 #* @param cntry country name
 #* @param num number of top words
-#* @param tpc disease topics
 function(tpc="") { 
-    epitweetr::setup_config("DATA_PATH")
+    epitweetr::setup_config(data_path)
     topwords <- epitweetr::create_topwords(
         topic = tpc, 
         country_codes = c("LS"),
@@ -22,7 +25,7 @@ function(tpc="") {
 #* @param cntry country name
 #* @param tpc disease name
 function(tpc="") {
-    epitweetr::setup_config("DATA_PATH")
+    epitweetr::setup_config(data_path)
     topchart <- epitweetr::create_topchart(
         topic= tpc,
         serie="entities",
@@ -39,7 +42,7 @@ function(tpc="") {
 #* @get /epitweetr/create_maps
 #* @param tpc disease name
 function(tpc="") {
-    epitweetr::setup_config("DATA_PATH")
+    epitweetr::setup_config(data_path)
     map <- epitweetr::create_map(
         topic=tpc, 
         countries = "African Region",
@@ -54,7 +57,7 @@ function(tpc="") {
 #* @get /epitweetr/trend_line
 #* @param tpc disease name
 function(tpc="") {
-    epitweetr::setup_config("DATA_PATH")
+    epitweetr::setup_config(data_path)
     line <- epitweetr::trend_line(
         topic =tpc,
         countries = "African Region",
