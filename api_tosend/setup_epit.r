@@ -1,4 +1,4 @@
-setup_epit <- function(){ #please enter the directory with "/" instead of "\"
+setup_epit <- function(){ 
     install.packages("epitweetr")
     # check if JAVA_HOME environment set up 
     result <- Sys.getenv("JAVA_HOME")
