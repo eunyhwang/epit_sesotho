@@ -1,6 +1,6 @@
 #install.packages('vscDebugger', repos='http://cran.us.r-project.org')
 #install.packages('plumber', repos='http://cran.us.r-project.org')
-install.packages('ggplot2', repos='http://cran.us.r-project.org')
+#install.packages('ggplot2', repos='http://cran.us.r-project.org')
 #install.packages('mapview', repos='http://cran.us.r-project.org')
 #install.packages('rgdal', repos='http://cran.us.r-project.org')
 #install.packages('dplyr', repos='http://cran.us.r-project.org')
