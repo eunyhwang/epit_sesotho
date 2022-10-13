@@ -51,3 +51,6 @@ Here is the instruction of using the API for those who are not familiar with Swa
 2. Type a name of a disease (for this, please see the ```topics.xlsx``` file which contains a list of disease names).
 3. Each endpoint will display tweets that mention the disease; top_words represents top words, top_entities represents context, create_maps displays distributions of tweets, and trend_line represents the trend in tweet numbers.
 
+
+# Upload a Sesotho word embedding
+On the Configuration tab in epitweetr dashboard, there is Languages download a In the ```fasttext``` folder, there is a fasttext word embedding of Sesotho. Explanation will be followed.
