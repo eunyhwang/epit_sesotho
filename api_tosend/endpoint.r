@@ -1,5 +1,5 @@
 #* @get /epitweetr/top_words
-#* @serializer png
+#* @serializer json
 #* @param cntry country name
 #* @param num number of top words
 #* @param tpc topic to query
@@ -16,11 +16,14 @@ function(tpc="", cntry="", num="", start="", end="") {
         location_type = "tweet", 
         top = num
     )
-    plot(topwords$chart)
+    mydata <- topwords$data
+    #mydata <- as.data.frame(topwords$data) #type: list 
+    #mydata <- jsonlite::toJSON(topwords$data) #type: character
+    print(mydata)
 }
 
 #* @get /epitweetr/top_entities
-#* @serializer png
+#* @serializer json
 #* @param cntry country name
 #* @param num number of top words
 #* @param tpc topic to query
@@ -38,12 +41,12 @@ function(tpc="", cntry="", num="", start="", end="") {
         location_type = "tweet", 
         top = num
     )
-    plot(topchart$chart)
+    topchart$data
 }
 
 #* @get /epitweetr/create_maps
-#* @serializer png
-#* @param cntry country name # names hould be in a full name (e.g. Lesotho)
+#* @serializer json
+#* @param cntry country name # names should be in a full name (e.g. Lesotho)
 #* @param tpc topic to query
 #* @param start indicating start of the reporting period
 #* @param end indicating end of the reporting period
@@ -57,11 +60,16 @@ function(tpc="", cntry="", start="", end="") {
         with_retweets = FALSE, 
         location_type = "tweet", 
     )
-    plot(map$chart)
+    mydata <- map$data
+    mydata
+    # coords <- cbind(mydata$Long, mydata$Lat)
+    # spdf <-SpatialPointsDataFrame(coords, mydata)
+    # spdf
+
 }
 
 #* @get /epitweetr/trend_line
-#* @serializer png
+#* @serializer json
 #* @param cntry country name
 #* @param tpc topic to query
 #* @param start indicating start of the reporting period
@@ -74,5 +82,5 @@ function(tpc="", cntry="" , start="", end="") {
         date_min = start,
         date_max = end,
     )
-    plot(trendline$chart)
+    trendline$data
 }
