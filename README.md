@@ -32,7 +32,7 @@ conda env create -f env.yml
 conda activate epit
 ```
 ## Envrionment variable
-From this step, make sure that you are in the ```api_tosend``` folder. In the folder, you will see the ```.env``` file which contains the path of proxy, the path of hadoop, and the path of the epitweetr folder you want to work. Modify the variables to your own first and continue to follow the instruction by executing the line. 
+From this step, make sure that you are in the ```api_tosend``` folder. In the folder, you will see the ```.env``` file which contains the path of proxy, the path of hadoop, and the path of the epitweetr folder you want to work. Modify the variables to your own first and continue to follow the instruction by executing the line. (some detailed explanation about proxy, hadoop etc.)
 ```
 Rscript setup_epit.R 
 ```
