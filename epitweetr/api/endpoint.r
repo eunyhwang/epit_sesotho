@@ -1,72 +1,86 @@
 #* @get /epitweetr/top_words
+#* @serializer json
 #* @param cntry country name
 #* @param num number of top words
-#* @param tpc disease topics
-function(tpc="", cntry="", num) { # the variable cntry get only one country name. it needs to be updated with a list
-    epitweetr::setup_config("my_path/epit_trial_final")
-    ob <- epitweetr::create_topwords(
-        topic = tpc, 
+#* @param tpc topic to query
+#* @param start indicating start of the reporting period
+#* @param end indicating end of the reporting period
+function(tpc="", cntry="", num="", start="", end="") { 
+    epitweetr::setup_config(data_path)
+    topwords <- epitweetr::create_topwords(
+        topic = tpc,
         country_codes = cntry,
-        date_min = "2022-08-01",
-        date_max = "2022-08-30",
+        date_min = start,
+        date_max = end,
         with_retweets = FALSE, 
         location_type = "tweet", 
         top = num
     )
-    print(ob)
-    #print(country_codes)
+    mydata <- topwords$data
+    #mydata <- as.data.frame(topwords$data) #type: list 
+    #mydata <- jsonlite::toJSON(topwords$data) #type: character
+    print(mydata)
 }
 
-#change the name into top_charts and put more than one param
-#* @get /epitweetr/top_entities 
+#* @get /epitweetr/top_entities
+#* @serializer json
 #* @param cntry country name
-#* @param tpc disease name
-function(tpc="") {
-    epitweetr::setup_config("my_path/epit_trial_final")
+#* @param num number of top words
+#* @param tpc topic to query
+#* @param start indicating start of the reporting period
+#* @param end indicating end of the reporting period
+function(tpc="", cntry="", num="", start="", end="") { 
+    epitweetr::setup_config(data_path)
     topchart <- epitweetr::create_topchart(
-        topic= tpc,
+        topic = tpc,
         serie="entities",
-        country_codes = c("LS"),
-        date_min = "2022-08-01",
-        date_max = "2022-08-31",
-        with_retweets = FALSE,
-        location_type = "tweet",
-        top = 25
+        country_codes = cntry,
+        date_min = start,
+        date_max = end,
+        with_retweets = FALSE, 
+        location_type = "tweet", 
+        top = num
     )
-    print(topchart)
+    topchart$data
 }
 
 #* @get /epitweetr/create_maps
-#* @param tpc disease name
-function(tpc="") {
-    epitweetr::setup_config("my_path/epit_trial_final")
+#* @serializer json
+#* @param cntry country name # names should be in a full name (e.g. Lesotho)
+#* @param tpc topic to query
+#* @param start indicating start of the reporting period
+#* @param end indicating end of the reporting period
+function(tpc="", cntry="", start="", end="") { 
+    epitweetr::setup_config(data_path)
     map <- epitweetr::create_map(
-        topic=tpc, 
-        countries = "African Region",
-        date_min = "2022-08-01",
-        date_max = "2022-08-31",
-        with_retweets = FALSE,
-        location_type = "tweet"
+        topic = tpc,
+        countries = cntry,
+        date_min = start,
+        date_max = end,
+        with_retweets = FALSE, 
+        location_type = "tweet", 
     )
-    print(map)
+    mydata <- map$data
+    mydata
+    # coords <- cbind(mydata$Long, mydata$Lat)
+    # spdf <-SpatialPointsDataFrame(coords, mydata)
+    # spdf
+
 }
 
 #* @get /epitweetr/trend_line
-#* @param tpc disease name
-function(tpc="") {
-    epitweetr::setup_config("my_path/epit_trial_final")
-    line <- epitweetr::trend_line(
-        topic =tpc,
-        countries = "African Region",
-        date_type = "created_date",
-        date_min = "2022-08-01",
-        date_max = "2022-08-30",
-        with_retweets = FALSE, 
-        location_type = "tweet",
-        alpha = 0.025,
-        alpha_outlier = 0.05,
-        k_decay= 4,
-        no_historic=7
+#* @serializer json
+#* @param cntry country name
+#* @param tpc topic to query
+#* @param start indicating start of the reporting period
+#* @param end indicating end of the reporting period
+function(tpc="", cntry="" , start="", end="") { 
+    epitweetr::setup_config(data_path)
+    trendline <- epitweetr::trend_line(
+        topic = tpc,
+        countries = cntry,
+        date_min = start,
+        date_max = end,
     )
-    print(line)
+    trendline$data
 }
