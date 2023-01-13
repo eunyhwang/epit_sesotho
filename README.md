@@ -54,10 +54,9 @@ Epitweetr requires you to have an account in order to collect data. Please feel 
 
 ## Build up API
 ```
-Rscript endpoint.R 
 Rscript run_api.R
 ```
-Following the collection of data, you can use these R scripts to build up API. In the result of ```run_api.R```, you will get a local API address. Paste it in your web-browser to view the API on Swagger. 
+Following the collection of data, you can use the ```run_api.R``` script to build up an API. Simply open another command prompt, activate the conda environment, and run above line. This builds an API with endpoints decided in ```endpoint.r``` using Plumber, An API Generator for R. As a result, you will get a local API address. Paste it into your web-browser to view the API on Swagger. 
 
 Here is the instruction of using the API for those who are not familiar with Swagger. You can also see sample graphs and JSON files in ```sample payload```.
 
