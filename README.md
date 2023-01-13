@@ -38,7 +38,7 @@ From this step, make sure that you are in the ```epitweetr``` folder. In the fol
 ```
 Rscript setup_epit.R 
 ```
-This script installs epitweetr first. And then, it checks if JAVA_HOME envrionment is setup and the R environment knows the path. If you get an error, you need to set the JAVA_HOME variable for your OS, please see your specific OS instructions.
+This script checks if JAVA_HOME envrionment is setup and the R environment knows the path. If you get an error, you need to set the JAVA_HOME variable for your OS, please see your specific OS instructions.
 
 
 ## Run epitweetr
