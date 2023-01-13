@@ -17,8 +17,6 @@ function(tpc="", cntry="", num="", start="", end="") {
         top = num
     )
     mydata <- topwords$data
-    #mydata <- as.data.frame(topwords$data) #type: list 
-    #mydata <- jsonlite::toJSON(topwords$data) #type: character
     print(mydata)
 }
 
@@ -62,9 +60,6 @@ function(tpc="", cntry="", start="", end="") {
     )
     mydata <- map$data
     mydata
-    # coords <- cbind(mydata$Long, mydata$Lat)
-    # spdf <-SpatialPointsDataFrame(coords, mydata)
-    # spdf
 
 }
 
