@@ -44,6 +44,7 @@ This script installs epitweetr first. And then, it checks if JAVA_HOME envrionme
 ## Run epitweetr
 ```
 python run_epit.py
+```
 Kindly remind you that you should be in the ```epitweetr``` folder to run this Python script. This script launches the epitweetr Shiny app by executing four parallel loops under ``` functions``` folder (main_loop, detect_loop, search_loop, and fs_loop). Each loop script contains two lines ```proxy <- Sys.getenv("HTTPS_proxy")
 hadoop <- Sys.getenv("HTTPS_hadoop")``` in order to set the path of proxy and hadoop. If you do not have paths to set, set them as ```None```.
 
