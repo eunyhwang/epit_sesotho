@@ -69,13 +69,17 @@ Here is the instruction of using the API for those who are not familiar with Swa
 
 
 # Sesotho Word Embedding for epitweetr
-In order to detect public health threats in Lesotho region, we have to train an word embedding in their language, Sesotho. As epitweetr is developed with fasttext word embeddings, we also trained an word embedding via the fasttext model. To trian   
-On the Configuration tab in epitweetr dashboard, there is Languages download a In the ```fasttext``` folder, there is a fasttext word embedding of Sesotho. Explanation will be followed. 
+In order to detect public health threats in Lesotho region, we need to make epitweetr understand thier language, Sesotho. As epitweetr is developed with fasttext word embeddings, we also trained an word embedding in Sesotho via the fasttext model. 
 
-## Training a fasttext word embedding in Seesotho language
-When it comes to train a minor language with a lack of source, finding a proper dataset to train is challenging. We mainly used NCHLT Sesotho Text Corpora provided by [SADiLaR](sadilar.org), which is a 10 Mb sized collection of text documents classified by genre. (example?) As epitweetr requires only Fasttext, we trained the language on Fasttext with unsupervised learning methods; cbow and skipgram. We set the parameters as minimal counts to 2 and dimension to 100. In order to check the performance, we did the neighbor test as well as the analogy test. You can see the results below. 
+## Training a fasttext word embedding in Sesotho language
+When it comes to train a minor language with a lack of source, finding a proper dataset to train is challenging. We mainly used NCHLT Sesotho Text Corpora provided by [SADiLaR](sadilar.org), which is a 10 Mb sized collection of text documents classified by genre. Below you can see the example of the dataset. (example?) As epitweetr requires only Fasttext, we trained the language on Fasttext with unsupervised learning methods; cbow and skipgram. We set the parameters as minimal counts to 2 and dimension to 100. In order to check the performance, we did the neighbor test as well as the analogy test. You can see the results below. 
 
 ## Upload a fasttext word embedding
 On the Configuration tab in epitweetr dashboard, there is Languages download a In the ```fasttext``` folder, there is a fasttext word embedding of Sesotho. Explanation will be followed. 
 
+# Improvements
+## Create a R package
+After building an API, to wrap it up the project, we tried to create a R package. However, the python scrip to parallel subprocesses disturbs us to do that. In order to run epitweetr, 4 loops (main_loop, detect_loop, search_loop, fs_loop) need to be executed parallelly. We tried to use callr::r_bg library, but couldn't manage to make it work. Also, in order to attach a python script to build a R package, some extra work should be done. (one refere- https://stackoverflow.com/questions/60150956/attaching-python-script-while-building-r-package) 
 
+## Build a strong API
+A strong API is consistent, reliable, well-documented, and easy to understand. Unfortunately, our current API is not consistent, sometimes it perfectly works and sometimes not. In the last trial, we got into the error saying ''<simpleError: No method asJSON S3 class: waiver>'' Refering to [the description](https://ggplot2.tidyverse.org/reference/waiver.html),  ```waiver ``` is a flag obect, similar to NULL. It is weird that this error occured that we confirmed our object is not empty. As this occured in the last minute, we couldn't take enough time to debug it. 
