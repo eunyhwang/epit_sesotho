@@ -7,5 +7,5 @@ data_path <- Sys.getenv("DATA_PATH")
 
 Sys.setenv(HTTPS_Proxy = proxy)
 Sys.setenv(HADOOP_HOME = hadoop)
-print("search_loop starts") 
+ 
 epitweetr::search_loop(data_path)
