@@ -13,5 +13,5 @@ path = Path(os.getenv("DATA_PATH"))
 file = ['main_loop', 'detect_loop', 'search_loop', 'fs_loop']
 
 for a in file: 
-    print(a)
+    print(f'{a} is starting')
     subprocess.Popen(f'Rscript {path}/functions/%s.R' % a, shell=True)
