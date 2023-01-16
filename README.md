@@ -67,6 +67,12 @@ Here is the instruction of using the API for those who are not familiar with Swa
  - ```create_maps``` displays distributions of tweets
  - ```trend_line``` represents the trend in tweet numbers.
 
+This is an example of the JSON payload in the create_map endpoint with "African Region" and "COVID-19". 
+
+![image](https://user-images.githubusercontent.com/49271495/212721572-bf5dd134-21b1-4df7-90f3-43f35c6b3d6c.png)
+
+
+
 
 # Sesotho Word Embedding for epitweetr
 In order to detect public health threats in Lesotho region, we need to make epitweetr understand thier language, Sesotho. As epitweetr is developed with fasttext word embeddings, we also trained an word embedding in Sesotho via the fasttext model. 
