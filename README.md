@@ -10,9 +10,6 @@ The European Centre for Disease Prevention and Control (ECDC) developed an amazi
 [^1]: https://www.cdc.gov/globalhealth/healthprotection/gddopscenter/how.html 
 [^2]: https://www.eurosurveillance.org/docserver/fulltext/eurosurveillance/27/39/eurosurv-27-39-5.pdf?expires=1671706916&id=id&accname=guest&checksum=E6DF591E6FBCCCE42CC0703C3E8A4AFE
 
-When it comes to train a minor language with a lack of source, finding a proper dataset to train is challenging. We mainly used NCHLT Sesotho Text Corpora provided by [SADiLaR](sadilar.org), which is a 10 Mb sized collection of text documents classified by genre. (example?) As epitweetr requires only Fasttext, we trained the language on Fasttext with unsupervised learning methods; cbow and skipgram. We set the parameters as minimal counts to 2 and dimension to 100. In order to check the performance, we did the neighbor test as well as the analogy test. You can see the results below. 
-
-
 # Prerequisites
 Before you run epitweetr, you need to get **a Twitter account** as well as below-mentioned softwares. Please be aware of that you need to install the correct version of each software. For the further information about getting a Twitter account and the softwares, check out [Epitweetr vignette](https://cran.r-project.org/web/packages/epitweetr/vignettes/epitweetr-vignette.html).
 - R version 3.6.3 or higher
@@ -71,5 +68,14 @@ Here is the instruction of using the API for those who are not familiar with Swa
  - ```trend_line``` represents the trend in tweet numbers.
 
 
-# Upload a Sesotho word embedding
-On the Configuration tab in epitweetr dashboard, there is Languages download a In the ```fasttext``` folder, there is a fasttext word embedding of Sesotho. Explanation will be followed.
+# Sesotho Word Embedding for epitweetr
+In order to detect public health threats in Lesotho region, we have to train an word embedding in their language, Sesotho. As epitweetr is developed with fasttext word embeddings, we also trained an word embedding via the fasttext model. To trian   
+On the Configuration tab in epitweetr dashboard, there is Languages download a In the ```fasttext``` folder, there is a fasttext word embedding of Sesotho. Explanation will be followed. 
+
+## Training a fasttext word embedding in Seesotho language
+When it comes to train a minor language with a lack of source, finding a proper dataset to train is challenging. We mainly used NCHLT Sesotho Text Corpora provided by [SADiLaR](sadilar.org), which is a 10 Mb sized collection of text documents classified by genre. (example?) As epitweetr requires only Fasttext, we trained the language on Fasttext with unsupervised learning methods; cbow and skipgram. We set the parameters as minimal counts to 2 and dimension to 100. In order to check the performance, we did the neighbor test as well as the analogy test. You can see the results below. 
+
+## Upload a fasttext word embedding
+On the Configuration tab in epitweetr dashboard, there is Languages download a In the ```fasttext``` folder, there is a fasttext word embedding of Sesotho. Explanation will be followed. 
+
+
