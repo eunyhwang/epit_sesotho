@@ -7,6 +7,6 @@ data_path <- Sys.getenv("DATA_PATH")
 
 Sys.setenv(HTTPS_Proxy = proxy)
 Sys.setenv(HADOOP_HOME = hadoop)
-print("main_loop starts")
+
 library(epitweetr)
 epitweetr_app(data_path)
