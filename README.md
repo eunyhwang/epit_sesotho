@@ -1,4 +1,4 @@
-This repository is 
+This repository is to document dataset, methods, and results of the NaLaA project. 
 
 # Project Background
 
@@ -34,7 +34,8 @@ conda env create -f env.yml
 conda activate epit
 ```
 ## Environment variables
-From this step, make sure that you are in the ```epitweetr``` folder. In the folder, you will see the ```.env``` file which contains the path of proxy, the path of hadoop, and the path of the epitweetr folder you want to work. The proxy is a proxy server that you authorize Modify the variables to your own first and continue to follow the instruction by executing the line. (some detailed explanation about proxy, hadoop etc.)
+From this step, make sure that you are in the ```epitweetr``` folder. In the folder, you will see the ```.env``` file which contains 3 variables: HTTPS_proxy, HADOOP_HOME, and DATA_PATH. HTTPS_proxy, you type the information of the authenticated proxy setting- generally, it looks like this ```http://username:password@proxyAddress:port```. HADDOP_HOME is where you put the path where you want HADOOP runs. DATA_PATH is the path where you install epitweetr and collect data, so use the path where you download this repository. Please modify the variables to your own first and continue to follow the instruction by executing the line.
+
 ```
 Rscript setup_epit.R 
 ```
