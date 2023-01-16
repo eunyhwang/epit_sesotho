@@ -14,7 +14,7 @@ When it comes to train a minor language with a lack of source, finding a proper 
 
 
 # Prerequisites
-Before you run epitweetr, you need to install these softwares. Please be aware of that you need to install the correct version of each. If you need more information about this, check out [Epitweetr vignette](https://cran.r-project.org/web/packages/epitweetr/vignettes/epitweetr-vignette.html).
+Before you run epitweetr, you need to get **a Twitter account** as well as below-mentioned softwares. Please be aware of that you need to install the correct version of each software. For the further information about getting a Twitter account and the softwares, check out [Epitweetr vignette](https://cran.r-project.org/web/packages/epitweetr/vignettes/epitweetr-vignette.html).
 - R version 3.6.3 or higher
 - Java 1.8 eg. openjdk version “1.8” https://www.java.com/download/. In Mac, https://docs.oracle.com/javase/9/install/installation-jdk-and-jre-macos.htm
 - Microsoft Visual C++ 2010 Redistributable Package (x64) https://www.microsoft.com/en-us/download/details.aspx?id=26999
