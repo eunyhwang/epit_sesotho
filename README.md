@@ -31,7 +31,7 @@ conda env create -f env.yml
 conda activate epit
 ```
 ## Environment variables
-From this step, make sure that you are in the ```epitweetr``` folder. In the folder, you will see the ```.env``` file which contains 3 variables: HTTPS_proxy, HADOOP_HOME, and DATA_PATH. HTTPS_proxy, you type the information of the authenticated proxy setting- generally, it looks like this ```http://username:password@proxyAddress:port```. HADDOP_HOME is where you put the path where you want HADOOP runs. DATA_PATH is the path where you install epitweetr and collect data, so use the path where you download this repository. Please modify the variables to your own first and continue to follow the instruction by executing the line.
+From this step, make sure that you are in the ```epitweetr``` folder. In the folder, you will see the ```.env``` file which contains 3 variables: HTTPS_proxy, HADOOP_HOME, and DATA_PATH. HTTPS_proxy is to set your proxy server if you sit behind a firewall with proxy.  (generally, proxy servers look like this ```http://username:password@proxyAddress:port```). HADDOP_HOME is the path where your bianreis of your haddop is set after installing hadoop. DATA_PATH is the path where you install epitweetr and collect data, so use the path where you download this repository. Please modify the variables to your own first and continue to follow the instruction by executing the line.
 
 ```
 Rscript setup_epit.R 
@@ -56,11 +56,11 @@ Rscript run_api.R
 ```
 Following the collection of data, you can use the ```run_api.R``` script to build up an API. Simply open another command prompt, activate the conda environment, and run above line. This builds an API with endpoints decided in ```endpoint.r``` using Plumber, An API Generator for R. As a result, you will get a local API address. Paste it into your web-browser to view the API on Swagger. 
 
-Here is the instruction of using the API for those who are not familiar with Swagger. You can also see sample graphs and JSON files in ```sample payload```.
+Here is the instruction of using the API for those who are not familiar with Swagger. You can also see sample screenshots in ```sample payload```.
 
-0. It has four endpoints at the moment: top_words, top_entities, create_maps, and trend_line. By default, the region is set as Lesotho or African Region, and the period is set from 1st to 30th of August.
-1. Choose one endpoint and click "Try it out" on the right side, a few parameters will be displayed but only "disease name" is available to be modified for now.
-2. Type a name of a disease (for this, please see the ```topics.xlsx``` file which contains a list of disease names).
+0. It has four endpoints: top_words, top_entities, create_maps, and trend_line. 
+1. Choose one endpoint and click "Try it out" on the right side, several parameters will be displayed to modify such as topic, country name, number, starting date and ending date.
+2. Type a name of a disease (for this, please see the ```topics.xlsx``` file which contains a list of disease names), and set other parameters as you want.
 3. Each endpoint will display tweets that mention the disease.  
  - ```top_words``` represents top words 
  - ```top_entities``` represents context, 
@@ -86,9 +86,7 @@ As the dataset is not labeled, we chose unsupervised learning; cbow and skipgram
 ## Upload a fasttext word embedding
 On the Configuration tab in epitweetr dashboard, there is Languages download a In the ```fasttext``` folder, there is a fasttext word embedding of Sesotho. Explanation will be followed. 
 
-# Improvements
+# Final notes
 ## Create a R package
-After building an API, to wrap it up the project, we tried to create a R package. However, the python scrip to parallel subprocesses disturbs us to do that. In order to run epitweetr, 4 loops (main_loop, detect_loop, search_loop, fs_loop) need to be executed parallelly. We tried to use callr::r_bg library, but couldn't manage to make it work. Also, in order to attach a python script to build a R package, some extra work should be done. (one reference - https://stackoverflow.com/questions/60150956/attaching-python-script-while-building-r-package) 
+This project could be improved by wrapping into a R package. Creating a package is always a good way to keep R functions that you write and to reuse them easily. 
 
-## Build a strong API
-A strong API is consistent, reliable, well-documented, and easy to understand. Unfortunately, our current API is not consistent, sometimes it perfectly works and sometimes not. In the last trial, we got into the error saying ```<simpleError: No method asJSON S3 class: waiver>``` Refering to [the description](https://ggplot2.tidyverse.org/reference/waiver.html),  ```waiver``` is a flag obect, similar to NULL. It is weird that this error occured that we confirmed our object is not empty. As this occured in the last minute, we couldn't take enough time to debug it. 
