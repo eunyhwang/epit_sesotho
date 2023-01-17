@@ -88,5 +88,4 @@ On the Configuration tab in epitweetr dashboard, there is Languages download a I
 
 # Final notes
 ## Create a R package
-This project could be improved by wrapping into a R package. Creating a package is always a good way to keep R functions that you write and to reuse them easily. 
-
+The project could be improved by wrapping it in an R package. It is always a good idea to create a package for R functions that you have written, so that they can be easily reused in other projects.
