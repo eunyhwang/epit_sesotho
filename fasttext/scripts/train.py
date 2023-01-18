@@ -23,8 +23,6 @@ with open('/path_to_your_corpus', 'r', encoding ='UTF8') as file:
 
 # Training # we get a bin file as a result
 print("training")
-model = fasttext.train_unsupervised(corpus_tokenized, model='skipgram', epoch=25, lr=0.05, minCount=2, dim=100)
-model.save_model('put_a_name')
 model = fasttext.train_unsupervised(corpus_tokenized, model='cbow', epoch=25, lr=0.05, minCount=2, dim=300)
 model.save_model('put_a_name')
 
