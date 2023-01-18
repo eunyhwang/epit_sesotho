@@ -77,14 +77,15 @@ This is an example of the JSON payload in the create_map endpoint with "African 
 # Sesotho Word Embedding for epitweetr
 In order to detect public health threats in Lesotho region, we need to make epitweetr understand thier language, Sesotho. As epitweetr is developed with fasttext word embeddings, we also trained an word embedding in Sesotho via the fasttext model. 
 
-## Training a fasttext word embedding in Sesotho language
+## Dataset
 When it comes to train a minor language with a lack of source, finding a proper dataset to train is challenging. We mainly used NCHLT Sesotho Text Corpora provided by [SADiLaR](repo.sadilar.org), which is a 10 Mb sized collection of text documents classified by genre. Below you can see the example of the dataset. 
 ![image](https://user-images.githubusercontent.com/49271495/212697419-c56a9744-b124-49ef-8de5-5acec83b8860.png)
 
-As the dataset is not labeled, we chose unsupervised learning; cbow and skipgram. We set the parameters as minimal counts to 2 and dimension to 100. In order to check the performance, we did the neighbor test as well as the analogy test. You can see the results below. 
+## How we trained a fasttext word embedding in Sesotho language
+As the step of preprocessing, we used the lemmatiser for Sesotho which you can also find in the folder under the ```fasttext/data``` folder. We did unsupervised learning as the dataset is not labeled, and used the cbow model to train following the kind advice of the provider of the dataset that cbow would high likely perform better than skipgram. Based on the result of a gridSearch, we set the parameters like this: epoch=25, lr=0.1, minCount=2, dim=300. In order to evaluate the performance, we did the neighbor test as well as the analogy test. 
 
 ## Upload a fasttext word embedding
-On the Configuration tab in epitweetr dashboard, there is Languages download a In the ```fasttext``` folder, there is a fasttext word embedding of Sesotho. Explanation will be followed. 
+The trained word embedding is uploaded named ```cbow_300.vec.gz``` to be used. You can upload this embedding into the epitweetr dashboard, then epitweetr start to use the lanugage to collect twitter data. 
 
 # Final notes
 ## Create a R package
