@@ -82,7 +82,7 @@ When it comes to train a minor language with a lack of source, finding a proper 
 ![image](https://user-images.githubusercontent.com/49271495/212697419-c56a9744-b124-49ef-8de5-5acec83b8860.png)
 
 ## How we trained a fasttext word embedding in Sesotho language
-As the step of preprocessing, we used the lemmatiser for Sesotho which you can also find in the folder under the ```fasttext/data``` folder. We did unsupervised learning as the dataset is not labeled, and used the cbow model to train following the kind advice of the provider of the dataset that cbow would high likely perform better than skipgram. Based on the result of a gridSearch, we set the parameters like this: epoch=25, lr=0.1, minCount=2, dim=300. In order to evaluate the performance, we did the neighbor test as well as the analogy test. 
+We used the SADiLaR data for training our embedding and you can find the dataset in the folder under the ```fasttext/data``` folder. We did unsupervised learning as the dataset is not labeled, and used the cbow model to train following the kind advice of the provider of the dataset that cbow would high likely perform better than skipgram. Based on the result of a gridSearch, we set the parameters like this: epoch=25, lr=0.1, minCount=2, dim=300. In order to evaluate the performance, we did the neighbor test as well as the analogy test. 
 
 ## Upload a fasttext word embedding
 The trained word embedding is uploaded named ```cbow_300.vec.gz``` to be used. You can upload this embedding into the epitweetr dashboard, then epitweetr start to use the lanugage to collect twitter data. 
